@@ -7,11 +7,13 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/signin' element={<Signin/>} />
-        <Route path='/account' element={<Account/>} />
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/signin' element={<Signin/>} />
+          <Route path='/account' element={<Account/>} />
+        </Routes>
+      </AuthContextProvider>
     </div>
   );
 }
