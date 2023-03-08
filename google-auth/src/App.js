@@ -8,12 +8,14 @@ import Home from './pages/Home';
 function App() {
   return (
     <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/account" element={<Account />} />
-      </Routes>
+      <AuthContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+      </AuthContextProvider>
     </div>
   );
 }
